@@ -43,14 +43,18 @@ Meteor.methods({
         console.log(error);
       } else {
         console.log("Video updated");
+        addVideoAnalysis(id);
       }
     });
   }
 });
 
-function addVideoAnalysis(tag)
+function addVideoAnalysis(id)
 {
   // $('#container').append($(document.create))
+
+  var record = Videos.findOne({_id:id});
+  var tag = record.tag;
 
   var data = new google.visualization.DataTable();
   data.addColumn('number', 'X');
@@ -141,7 +145,6 @@ function requestClarifai(id, source)
       console.log(tag);
 
       // Update video and store tags
-      addVideoAnalysis(tag);
       Meteor.call('videos.updateTag', tag);
     }
   });
