@@ -62,10 +62,11 @@ function addVideoAnalysis(tag)
       if (i == 0) {
         data.addColumn('number', key);
       }
-      row.push(value);
+      row.push(value * 100);
     })
     rows.push(row);
   });
+  console.log(rows);
   data.addRows(rows);
 
   var options = {
