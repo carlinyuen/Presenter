@@ -1,0 +1,51 @@
+/* CSS declarations go here */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 720px;
+  margin: 0px auto;
+  padding-top: 72px;
+  text-align: center;
+}
+
+#header {
+  width: 100%;
+  padding: 16px 0px;
+  background: #444;
+  position: fixed;
+  top: 0;
+}
+
+.title {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #fff;
+  margin: 0px 24px;
+}
+
+.recordedVideo {
+  margin: 24px 0px;
+  border-top: 1px solid #888;
+}
+
+.videoPlayer {
+  width: 45%;
+  margin: 0px 2% 0px 2%;
+  border-right: 1px solid #BBB;
+  background: #EEE;
+}
+.videoAnalysis {
+  width: 45%;
+  margin: 0px 2% 0px 2%;
+  background: #EEE;
+}
+
+@media (max-width: 420px) {
+  .videoPlayer, .videoAnalysis {
+    width: 100%;
+    border: none;
+  }
+}

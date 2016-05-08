@@ -1,0 +1,47 @@
+
+
+<body>
+  <header id="header">
+    <h1 class="title">Presenter</h1>
+  </header>
+
+  <div id="container">
+    <h3>Record your presentation!</h3>
+    <p>Please make sure that your entire face is visible.</p>
+    <!-- {{> checker}} -->
+    <ziggeo
+      ziggeo-width=720
+      ziggeo-height=480>
+    </ziggeo>
+
+    <ul>
+      {{#each videos}}
+        {{> recordedVideo}}
+      {{/each}}
+    </ul>
+
+    <div id="chart_div">
+    </div>
+  </div>
+</body>
+
+<template name="checker">
+  <button>Check Videos</button>
+  <p>{{counter}}</p>
+</template>
+
+<template name="recordedVideo">
+<div class="recordedVideo">
+  <p class="videoMetadata">Recorded on {{dateCreated}}</p>
+  <div class="videoPlayer">
+    <ziggeo ziggeo-video={{token}}
+      ziggeo-width=480
+      ziggeo-height=320>
+    </ziggeo>
+  </div>
+  <div class="videoAnalysis">
+
+  </div>
+  <button class="delete">&times;</button>
+</div>
+</template>
